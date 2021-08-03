@@ -1,9 +1,10 @@
 import java.util.Scanner;
+
 public class PreWorkAssignment {
 
 		Scanner sc = new Scanner(System.in);
-	      //function to checkPalindrome
 
+	      //function to checkPalindrome
 	       public void checkPalindrome()  {
 	    	   int r, sum = 0, temp;
 	    	   System.out.println("Enter a number to check if a its palindrome:");
@@ -21,8 +22,8 @@ public class PreWorkAssignment {
 	    	   	System.out.println(temp+" is not a palindrome");
 	    	   }
 	      }
-	   //function to printPattern
 
+	   //function to printPattern
 	      public void printPattern() {
 	       	System.out.println("Enter a number to show the star pattern:");
 	    	int input = sc.nextInt();
@@ -36,7 +37,6 @@ public class PreWorkAssignment {
 	  	}
 
 	  //function to check no is prime or not
-
 	        public void checkPrimeNumber() {
 	        	System.out.println("Enter a number to check if prime number or not:");
 	    		int num = sc.nextInt();
@@ -55,12 +55,12 @@ public class PreWorkAssignment {
 			      System.out.println(num + " is not a prime number.");
 			    }
 	        }
-	  // function to print Fibonacci Series
 
+	  // function to print Fibonacci Series
 	       public void printFibonacciSeries() {
 				System.out.println("Enter a number to check if its Fibonacci series:");
 	    		int count = sc.nextInt();
-	    //initialize the first and second value as 0,1 respectively.
+	    		//initialize the first and second value as 0,1 respectively.
 	    		int first = 0, second = 1, sum;
 	    		System.out.print(first+" "+second);//printing 0 and 1  
 	           
@@ -73,100 +73,45 @@ public class PreWorkAssignment {
 	            System.out.println(" ");
 	          }
 
-	 
-
 	//main method which contains switch and do while loop
-
 	      public static void main(String[] args) {
+	    	PreWorkAssignment obj = new PreWorkAssignment();
+	        int choice;
+	        Scanner sc = new Scanner(System.in);
 
-	    	  PreWorkAssignment obj = new PreWorkAssignment();
+				do {
+					System.out.println("Enter your choice from below list.\n" + "1. Find palindrome of number.\n"
+					+ "2. Print Pattern for a given no.\n" + "3. Check whether the no is a  prime number.\n"
+					+ "4. Print Fibonacci series.\n" + "--> Enter 0 to Exit.\n");
 
-	                int choice;
+					System.out.println();
+					choice = sc.nextInt();
 
-	                Scanner sc = new Scanner(System.in);
-
-	do {
-
-	System.out.println("Enter your choice from below list.\n" + "1. Find palindrome of number.\n"
-
-	+ "2. Print Pattern for a given no.\n" + "3. Check whether the no is a  prime number.\n"
-
-	+ "4. Print Fibonacci series.\n" + "--> Enter 0 to Exit.\n");
-
-	System.out.println();
-
-	 
-
-	choice = sc.nextInt();
-
-	switch (choice) {
-
-	 
-
-	case 0:
-
-	choice = 0;
-
-	break;
-
-	 
-
-	case 1: {
-
-	obj.checkPalindrome();
-
+					switch (choice) {
+					case 0:
+						choice = 0;
+						break;
+					case 1: {
+						obj.checkPalindrome();
+					}
+					break; 
+					case 2: {
+						obj.printPattern();
+					}
+					break;
+					case 3: {
+						obj.checkPrimeNumber();
+					}
+					break;
+					case 4: {
+						obj.printFibonacciSeries();
+					}
+					break;
+					default:
+						System.out.println("Invalid choice. Enter a valid no.\n");
+				}} while (choice != 0);
+				System.out.println("Exited Successfully!!!");
+				sc.close();
 	}
-
-	break;
-
-	 
-
-	case 2: {
-
-	obj.printPattern();
-
-	}
-
-	break;
-
-
-	case 3: {
-
-	obj.checkPrimeNumber();
-
-	}
-
-	break;
-
-	case 4: {
-
-	 
-
-	obj.printFibonacciSeries();
-
-	}
-
-	break;
-
-	 
-
-	default:
-
-	System.out.println("Invalid choice. Enter a valid no.\n");
-
-	}
-
-	 
-
-	} while (choice != 0);
-
-	System.out.println("Exited Successfully!!!");
-
-	sc.close();
-
-	}
-
-	 
-
-	}
+}
 
